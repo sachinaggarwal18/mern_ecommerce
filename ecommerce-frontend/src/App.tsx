@@ -2,12 +2,14 @@ import {BrowserRouter as Router,Route,Routes} from 'react-router-dom'
 import { lazy,Suspense } from 'react'
 import Loader from './components/loader';
 import Header from './components/header';
+ 
 
 const Home = lazy(()=> import('./pages/home'));
 const Search = lazy(()=> import('./pages/search'));
 const Cart = lazy(()=> import('./pages/cart'));
 const Shipping = lazy(()=> import('./pages/shipping'));
 const Login = lazy(()=> import('./pages/login'));
+const Orders = lazy(()=> import('./pages/orders'));
 
 //Admin Routes importing
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
@@ -48,6 +50,7 @@ const App = () => {
 
         <Route>
             <Route path='/shipping' element={<Shipping/>} />
+            <Route path='/orders' element={<Orders/>} />
         </Route>
 
         {/* Admin routes */}
